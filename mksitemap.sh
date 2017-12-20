@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash 
 
 fsitemap=sitemap.xml
 flist=`mktemp`;
@@ -15,7 +15,7 @@ echo "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">" >> ${fsite
 while read fn
 do
     url=${urlbase}/${fn}
-    timestamp=`date -r ${fn} -u +%Y-%m-%dT%H:%M:%S%:z`
+    timestamp=`date -r "${fn}" -u +%Y-%m-%dT%H:%M:%S%:z`
     echo "<url><loc>${url}</loc><lastmod>${timestamp}</lastmod></url>" >> ${fsitemap}
 done < ${flist}
 
